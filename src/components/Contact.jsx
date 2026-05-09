@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Copy, Check } from 'lucide-react';
+import { Mail, Copy, Check, ArrowRight } from 'lucide-react';
 
 const EMAIL = 'yogeshbhatt1239@gmail.com';
 
@@ -46,26 +46,30 @@ export default function Contact() {
   return (
     <section id="contact">
       <div className="container">
-        <div className="contact-wrap">
-          <span className="section-eyebrow">Contact</span>
-          <h2 className="section-heading">Let's Connect</h2>
-          <p style={{ fontSize: '15px', color: 'var(--text-2)', lineHeight: '1.7', marginBottom: '36px' }}>
-            Open to backend engineering roles, internships, and collaborations.
-            Feel free to reach out — I reply promptly.
-          </p>
+        <div className="contact-split">
 
-          {/* Email card */}
-          <div className="contact-email-card">
-            <div className="contact-email-left">
-              <div className="contact-email-icon">
-                <Mail size={18} />
+          {/* ── Left: Info + Socials ── */}
+          <div className="contact-left">
+            <span className="section-eyebrow">Get in Touch</span>
+            <h2 className="section-heading" style={{ marginBottom: '16px' }}>
+              Let's work together.
+            </h2>
+            <p className="contact-left-body">
+              I'm open to backend engineering roles, internships, and collaborations.
+              If you have something interesting in mind, send me a message — I'll get
+              back to you.
+            </p>
+
+            <div className="contact-email-card">
+              <div className="contact-email-left">
+                <div className="contact-email-icon">
+                  <Mail size={18} />
+                </div>
+                <div>
+                  <p className="contact-email-label">Email</p>
+                  <a href={`mailto:${EMAIL}`} className="contact-email-addr">{EMAIL}</a>
+                </div>
               </div>
-              <div>
-                <p className="contact-email-label">Email</p>
-                <a href={`mailto:${EMAIL}`} className="contact-email-addr">{EMAIL}</a>
-              </div>
-            </div>
-            <div className="contact-email-right">
               <button
                 className={`copy-btn${copied ? ' copied' : ''}`}
                 onClick={handleCopy}
@@ -75,23 +79,70 @@ export default function Contact() {
                 {copied ? 'Copied!' : 'Copy'}
               </button>
             </div>
+
+            <div className="contact-socials">
+              {SOCIALS.map(s => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="contact-social-link"
+                >
+                  {s.icon}
+                  {s.label}
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Social links */}
-          <div className="contact-socials">
-            {SOCIALS.map(s => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-                className="contact-social-link"
-              >
-                {s.icon}
-                {s.label}
-              </a>
-            ))}
+          {/* ── Right: Contact Form ── */}
+          <div className="contact-right">
+            <form
+              className="contact-form"
+              action={`mailto:${EMAIL}`}
+              method="post"
+              encType="text/plain"
+            >
+              <div className="contact-form-group">
+                <label className="contact-form-label" htmlFor="contact-name">Name</label>
+                <input
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  className="contact-form-input"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div className="contact-form-group">
+                <label className="contact-form-label" htmlFor="contact-email">Email</label>
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  className="contact-form-input"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <div className="contact-form-group">
+                <label className="contact-form-label" htmlFor="contact-message">Message</label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  className="contact-form-textarea"
+                  placeholder="What's on your mind?"
+                  rows={5}
+                  required
+                />
+              </div>
+              <button type="submit" className="contact-form-btn">
+                Send Message <ArrowRight size={15} />
+              </button>
+            </form>
           </div>
+
         </div>
       </div>
     </section>

@@ -1,39 +1,32 @@
-import { Download, FileText } from 'lucide-react';
+import { FileText, Download } from 'lucide-react';
 
 export default function Essay() {
   return (
     <section id="essay" className="essay-section">
       <div className="container">
+        <span className="section-eyebrow">Essay</span>
+        <h2 className="section-heading">Remote Work</h2>
+        <p className="section-subheading">
+          A handwritten essay submitted as part of coursework.
+        </p>
 
-        {/* Section Header */}
-        <div style={{ textAlign: 'center', marginBottom: '52px' }}>
-          <span className="section-eyebrow">My Work</span>
-          <h2 className="section-heading">Handwritten Essay</h2>
-          <p style={{ fontSize: '15px', color: 'var(--text-2)', maxWidth: '480px', margin: '0 auto', lineHeight: '1.7' }}>
-            A personal essay written by hand — sharing my thoughts, experiences, and journey as a developer.
-          </p>
-        </div>
-
-        {/* PDF Card */}
         <div className="essay-wrapper">
-
           {/* Card header */}
           <div className="essay-card-header">
             <div className="essay-card-icon">
               <FileText size={18} />
             </div>
             <div>
-              <p className="essay-card-title">essay.pdf</p>
-              <p className="essay-card-sub">Handwritten · Personal</p>
+              <p className="essay-card-title">Essay — Remote Work</p>
+              <p className="essay-card-sub">Handwritten submission</p>
             </div>
             <a
               href="/essay.pdf"
               download
-              className="btn-outline"
-              style={{ marginLeft: 'auto', fontSize: '13px', padding: '7px 16px' }}
+              className="btn-ghost"
+              style={{ marginLeft: 'auto', fontSize: '12.5px', padding: '6px 14px' }}
             >
-              <Download size={14} />
-              Download
+              <Download size={13} /> Download
             </a>
           </div>
 
@@ -41,23 +34,20 @@ export default function Essay() {
           <div className="essay-embed-wrap">
             <iframe
               src="/essay.pdf"
-              title="Handwritten Essay"
-              width="100%"
-              height="600px"
-              style={{ border: 'none', display: 'block' }}
+              title="Essay — Remote Work"
+              style={{ width: '100%', minHeight: '700px', border: 'none', display: 'block' }}
             />
           </div>
 
-          {/* Fallback message (shown if iframe is unsupported) */}
+          {/* Fallback link */}
           <div className="essay-fallback">
             <p>
-              Can&apos;t view the PDF?{' '}
-              <a href="/essay.pdf" download className="essay-fallback-link">
-                Download it here
+              Can't see the PDF?{' '}
+              <a href="/essay.pdf" target="_blank" rel="noreferrer" className="essay-fallback-link">
+                Open in new tab
               </a>
             </p>
           </div>
-
         </div>
       </div>
     </section>

@@ -13,7 +13,7 @@ export default function Navbar() {
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
-            <a href="#intro">Intro</a>
+            <a href="#writing">Writing</a>
             <a href="#essay">Essay</a>
             <a href="#contact">Contact</a>
           </div>

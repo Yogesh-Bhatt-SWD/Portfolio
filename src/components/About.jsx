@@ -1,28 +1,32 @@
-import { Server, Database, GraduationCap } from 'lucide-react';
+import { Server, PenLine } from 'lucide-react';
 
 export default function About() {
   return (
     <section id="about">
       <div className="container">
         <span className="section-eyebrow">About Me</span>
-        <h2 className="section-heading">Building backends that scale.</h2>
+        <h2 className="section-heading">A little about me.</h2>
 
         <div className="about-grid">
           {/* ── Left: Bio ── */}
           <div className="about-main">
             <p>
-              I'm a <strong>Backend Developer</strong> with hands-on experience building
-              production-grade <strong>RESTful APIs</strong> using Java and Spring Boot.
+              I'm a backend developer who loves turning complex problems into clean,
+              efficient systems. Currently, I'm pursuing my{' '}
+              <strong>B.Tech in Computer Science (AI &amp; ML)</strong> at{' '}
+              <strong>Graphic Era Hill University</strong> in Dehradun.
             </p>
             <p>
-              My work spans geospatial querying with MongoDB, AI service integration,
-              JWT-secured auth flows, and layered service architecture. I care about writing
-              backend code that is clean, maintainable, and built to handle real-world load.
+              My focus goes beyond standard coursework to tackle real-world
+              architecture. Whether I'm building APIs with{' '}
+              <strong>Java and Spring Boot</strong>, optimizing geospatial queries in{' '}
+              <strong>MongoDB</strong>, or integrating AI object detection, I care
+              deeply about writing code that is maintainable and scalable.
             </p>
             <p>
-              Currently pursuing <strong>B.Tech in Computer Science (AI &amp; ML)</strong>,
-              while actively sharpening my foundations in <strong>Data Structures</strong> and
-              <strong> System Design</strong>.
+              When I'm not building systems or sharpening my foundations in{' '}
+              <strong>Data Structures and System Design</strong>, I enjoy breaking
+              down complex backend flows to share with the developer community.
             </p>
           </div>
 
@@ -32,32 +36,21 @@ export default function About() {
               <div className="about-card-icon">
                 <Server />
               </div>
-              <h4>What I Do</h4>
+              <h4>System Architecture</h4>
               <p>
-                Design and build scalable REST APIs, implement business logic, integrate
-                databases, and connect external services — all in Java &amp; Spring Boot.
+                Clean data modeling, JWT auth flows, external AI service integration,
+                and geospatial querying with MongoDB's 2dsphere index.
               </p>
             </div>
 
             <div className="about-card">
               <div className="about-card-icon">
-                <Database />
+                <PenLine />
               </div>
-              <h4>What I Focus On</h4>
+              <h4>Technical Communication</h4>
               <p>
-                Clean architecture, proper data modeling, geospatial queries, secure
-                authentication, and writing code that is easy to maintain and extend.
-              </p>
-            </div>
-
-            <div className="about-card">
-              <div className="about-card-icon">
-                <GraduationCap />
-              </div>
-              <h4>Currently Learning</h4>
-              <p>
-                Advanced System Design concepts, DSA problem solving (LeetCode), and
-                deepening understanding of distributed systems fundamentals.
+                Breaking down backend internals — OAuth 2.0 flows, Spring Boot
+                request lifecycles, and API versioning — into clear visual explanations.
               </p>
             </div>
           </div>

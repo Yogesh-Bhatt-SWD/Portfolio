@@ -15,34 +15,36 @@ const PROJECTS = [
     name: 'CIVICA',
     subtitle: 'AI-Based Civic Issue Reporting Platform',
     description:
-      'A backend platform where users report civic issues by uploading images. AI automatically detects problems like potholes, garbage, and water logging — then routes them through a status workflow.',
+      'A full backend platform where citizens report infrastructure problems — potholes, broken streetlights, garbage — by uploading images. The system uses YOLOv8 object detection to classify the issue automatically and routes it through a structured resolution workflow.',
     bullets: [
-      'Built REST APIs using Spring Boot for reporting and managing civic issues with image upload support',
-      'Integrated YOLO-based object detection to classify issues (potholes, garbage, water logging)',
-      'Implemented geospatial querying using MongoDB 2dsphere indexing for nearby issue detection',
-      'Designed duplicate detection logic based on location proximity and issue type',
-      'Developed role-based status workflow: OPEN → IN_PROGRESS → RESOLVED',
-      'Handled image upload and validation pipeline',
+      'Developed scalable REST APIs for civic issue reporting and management using Spring Boot and layered architecture',
+      'Implemented Spring Security with JWT authentication and role-based authorization for secure user workflows',
+      'Integrated Redis caching and MongoDB geospatial querying for optimized nearby issue detection and faster retrieval',
+      'Built YOLOv8-based object detection pipeline to identify potholes, garbage, and waterlogging from uploaded images',
+      'Designed duplicate issue detection and workflow management system with OPEN, IN_PROGRESS, and RESOLVED states',
+      'Added Swagger/OpenAPI documentation for API testing and developer usability',
     ],
-    tech: ['Java', 'Spring Boot', 'MongoDB', 'YOLO (Python)', 'REST APIs'],
+    tech: ['Java', 'Spring Boot', 'Spring Security', 'MongoDB', 'Redis', 'YOLOv8'],
     github: 'https://github.com/Yogesh-Bhatt-SWD',
+    featured: true,
   },
   {
     id: '02',
     icon: BookOpen,
     name: 'NoteSphere',
-    subtitle: 'Personal Journaling Backend System',
+    subtitle: 'Intelligent Journaling Backend System',
     description:
-      'A journaling backend where users write, manage, and analyze personal entries with sentiment detection, tagging, and secure JWT-based authentication.',
+      'A journaling backend where users write, manage, and analyze personal entries with sentiment detection, intelligent tagging, and secure multi-layer authentication.',
     bullets: [
-      'Developed RESTful APIs using Spring Boot for creating, updating, and retrieving journal entries',
-      'Implemented JWT-based authentication for secure user access',
-      'Integrated sentiment analysis and tagging features per entry',
-      'Designed layered architecture using DTOs and service abstraction',
-      'Managed database operations for user-specific, isolated data',
+      'Built secure journaling REST APIs using Spring Boot with DTO-Service-Repository layered architecture',
+      'Implemented JWT authentication, OAuth2 authorization flow, and Spring Security for secure user access management',
+      'Integrated Redis caching for optimized journal retrieval and improved backend performance',
+      'Developed sentiment analysis and intelligent tagging features for personalized journal management',
+      'Added Swagger/OpenAPI integration for API visualization, testing, and documentation',
     ],
-    tech: ['Java', 'Spring Boot', 'MySQL', 'MongoDB', 'JWT', 'REST APIs'],
+    tech: ['Java', 'Spring Boot', 'MongoDB', 'Redis', 'OAuth2', 'JWT'],
     github: 'https://github.com/Yogesh-Bhatt-SWD',
+    featured: false,
   },
 ];
 
@@ -53,14 +55,17 @@ export default function Projects() {
         <span className="section-eyebrow">Projects</span>
         <h2 className="section-heading">Selected Work</h2>
         <p className="section-subheading">
-          Backend systems I've designed and built — focused on real-world engineering problems.
+          Backend systems I've designed and built — focused on real engineering problems.
         </p>
 
-        <div className="projects-grid">
+        <div className="projects-list">
           {PROJECTS.map(project => {
             const Icon = project.icon;
             return (
-              <article className="project-card" key={project.id}>
+              <article
+                key={project.id}
+                className={`project-card${project.featured ? ' project-card--featured' : ''}`}
+              >
                 <div className="project-card-header">
                   <div className="project-icon">
                     <Icon />
@@ -70,7 +75,6 @@ export default function Projects() {
 
                 <h3 className="project-title">{project.name}</h3>
                 <p className="project-subtitle">{project.subtitle}</p>
-
                 <p className="project-desc">{project.description}</p>
 
                 <ul className="project-bullets">

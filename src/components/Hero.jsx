@@ -1,4 +1,4 @@
-import { ArrowRight, GitFork, Download } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 
 function GitHubBrandIcon() {
   return (
@@ -46,21 +46,16 @@ export default function Hero() {
 
           {/* ── Left Column ── */}
           <div className="hero-left">
-            <div className="hero-badge">
-              <span className="hero-badge-dot" />
-              Open to Backend Engineering Roles
-            </div>
+            <p className="hero-role-label">Backend Developer</p>
 
-            <h1 className="hero-name">
-              Yogesh<br />
-              <span className="highlight">Bhatt</span>
+            <h1 className="hero-headline">
+              Building backends<br />
+              <span className="highlight">that scale.</span>
             </h1>
 
-            <p className="hero-role">Backend Developer</p>
-
             <p className="hero-tagline">
-              I build robust, scalable backend systems using Java &amp; Spring Boot —
-              from REST APIs and database design to AI integrations and geospatial features.
+              I'm a backend developer who loves building clean, scalable APIs and solving
+              complex architectural problems with Java and Spring Boot.
             </p>
 
             <div className="hero-actions">
