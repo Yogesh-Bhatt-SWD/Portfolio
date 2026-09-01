@@ -2,32 +2,51 @@
 
 /* ─── Design Tokens ──────────────────────────────────────────── */
 :root {
-  --bg:            #080810;
-  --bg-1:          #0e0e1a;
+  /* Backgrounds */
+  --bg:            #05050a;
+  --bg-1:          #0d0d16;
   --bg-2:          #13131f;
-  --bg-card:       rgba(255,255,255,0.03);
-  --border:        rgba(255,255,255,0.07);
-  --border-hover:  rgba(79,142,247,0.35);
-  --text:          #f0f0f8;
-  --text-2:        #9090a8;
-  --text-3:        #4e4e65;
-  --accent:        #4f8ef7;
-  --accent-2:      #7b5cf5;
-  --accent-dim:    rgba(79,142,247,0.12);
-  --accent-glow:   rgba(79,142,247,0.18);
-  --green:         #3dba7c;
-  --green-dim:     rgba(61,186,124,0.12);
-  --purple:        #9b7df8;
-  --purple-dim:    rgba(155,125,248,0.1);
-  --gradient-hero: linear-gradient(135deg, rgba(79,142,247,0.08) 0%, rgba(123,92,245,0.06) 100%);
+  --bg-card:       linear-gradient(135deg, #0d0d16 0%, #111119 100%);
+
+  /* Borders */
+  --border:        #1e1e2e;
+  --border-hover:  rgba(99, 102, 241, 0.4);
+
+  /* Text hierarchy */
+  --text:          #f8fafc;
+  --text-2:        #94a3b8;
+  --text-3:        #64748b;
+
+  /* Primary accent — indigo */
+  --accent:        #6366f1;
+  --accent-hover:  #818cf8;
+  --accent-press:  #4338ca;
+  --accent-dim:    rgba(99, 102, 241, 0.12);
+  --accent-glow:   rgba(99, 102, 241, 0.18);
+
+  /* Secondary accent — cyan (use sparingly, 1-2 places per section) */
+  --accent-2:      #22d3ee;
+  --accent-2-dim:  rgba(34, 211, 238, 0.1);
+
+  /* Status colors */
+  --green:         #34d399;
+  --green-dim:     rgba(52, 211, 153, 0.12);
+
+  /* Radius — unified 16px for all cards */
   --radius:        10px;
   --radius-lg:     16px;
-  --radius-xl:     24px;
+  --radius-xl:     16px;
+
+  /* Typography */
   --font-sans:     'Inter', system-ui, sans-serif;
   --font-mono:     'JetBrains Mono', monospace;
+
+  /* Layout */
   --max-w:         1100px;
-  --transition:    200ms cubic-bezier(0.4,0,0.2,1);
-  --transition-slow: 350ms cubic-bezier(0.4,0,0.2,1);
+
+  /* Transitions */
+  --transition:      200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ─── Reset ──────────────────────────────────────────────────── */
@@ -44,14 +63,15 @@ body {
   overflow-x: hidden;
 }
 
+/* Ambient background glows — indigo + cyan */
 body::before {
   content: '';
   position: fixed;
-  top: -40%;
-  left: -20%;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(79,142,247,0.06) 0%, transparent 70%);
+  top: -30%;
+  left: -15%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.07) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
 }
@@ -59,11 +79,11 @@ body::before {
 body::after {
   content: '';
   position: fixed;
-  bottom: -30%;
-  right: -15%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(123,92,245,0.05) 0%, transparent 70%);
+  bottom: -25%;
+  right: -10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.05) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
 }
@@ -97,7 +117,7 @@ section { padding: 96px 0; }
   text-transform: uppercase;
   color: var(--accent);
   background: var(--accent-dim);
-  border: 1px solid rgba(79,142,247,0.2);
+  border: 1px solid rgba(99, 102, 241, 0.25);
   padding: 4px 12px;
   border-radius: 20px;
   margin-bottom: 16px;
@@ -109,20 +129,22 @@ section { padding: 96px 0; }
   letter-spacing: -0.03em;
   color: var(--text);
   margin-bottom: 12px;
+  line-height: 1.2;
 }
 
 .section-subheading {
   font-size: 15px;
   color: var(--text-2);
   max-width: 520px;
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 52px;
 }
 
 /* ─── Scrollbar ──────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: rgba(99, 102, 241, 0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.35); }
 
 /* ─── Selection ──────────────────────────────────────────────── */
-::selection { background: rgba(79,142,247,0.25); color: var(--text); }
+::selection { background: rgba(99, 102, 241, 0.28); color: var(--text); }

@@ -91,7 +91,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ── Right Column: Photo ── */}
+          {/* ── Right Column: Photo + Terminal card ── */}
           <div className="hero-photo-wrap">
             <div className="hero-photo-glow" />
             <div className="hero-photo-ring">
@@ -99,7 +99,26 @@ export default function Hero() {
                 <img src="/avatar.png" alt="Yogesh Bhatt — Backend Developer" />
               </div>
             </div>
+
+            {/* Floating terminal decoration */}
+            <div className="hero-terminal">
+              <div className="hero-terminal-header">
+                <span className="hero-terminal-dot" style={{ background: '#ff5f57' }} />
+                <span className="hero-terminal-dot" style={{ background: '#febc2e' }} />
+                <span className="hero-terminal-dot" style={{ background: '#28c840' }} />
+                <span className="hero-terminal-title">GET /api/v1/developer</span>
+              </div>
+              <div className="hero-terminal-body">
+                <div><span className="t-dim">{'{'}</span></div>
+                <div>&nbsp;&nbsp;<span className="t-cyan">"name"</span><span className="t-dim">:</span> <span className="t-text">"Yogesh Bhatt"</span><span className="t-dim">,</span></div>
+                <div>&nbsp;&nbsp;<span className="t-cyan">"role"</span><span className="t-dim">:</span> <span className="t-text">"Backend Developer"</span><span className="t-dim">,</span></div>
+                <div>&nbsp;&nbsp;<span className="t-cyan">"stack"</span><span className="t-dim">:</span> <span className="t-accent">["Java", "Spring Boot"]</span><span className="t-dim">,</span></div>
+                <div>&nbsp;&nbsp;<span className="t-cyan">"status"</span><span className="t-dim">:</span> <span className="t-green">"open_to_work"</span></div>
+                <div><span className="t-dim">{'}'}</span></div>
+              </div>
+            </div>
           </div>
+
 
         </div>
       </div>
