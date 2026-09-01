@@ -5,7 +5,7 @@ import About    from './components/About';
 import Skills   from './components/Skills';
 import Projects from './components/Projects';
 import Writing  from './components/Writing';
-import Essay    from './components/Essay';
+
 import Contact  from './components/Contact';
 import Footer          from './components/Footer';
 import ResumeUploader from './components/ResumeUploader';
@@ -20,7 +20,6 @@ export default function App() {
         <Skills />
         <Projects />
         <Writing />
-        <Essay />
         <Contact />
       </main>
       <Footer />
