@@ -1,18 +1,387 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yogesh Bhatt — Backend Developer</title>
-    <meta name="description" content="Backend Developer specializing in Java and Spring Boot. Building scalable REST APIs, geospatial systems, and AI-integrated platforms." />
-    <meta name="author" content="Yogesh Bhatt" />
-    <meta property="og:title" content="Yogesh Bhatt — Backend Developer" />
-    <meta property="og:description" content="Portfolio of Yogesh Bhatt, a Backend Developer with expertise in Java, Spring Boot, and MongoDB." />
-    <meta property="og:type" content="website" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yogesh Bhatt — Backend Developer</title>
+<meta name="description" content="Yogesh Bhatt builds scalable backend systems with Java and Spring Boot — REST APIs, distributed services, and data pipelines that hold up in production.">
+<meta property="og:title" content="Yogesh Bhatt — Backend Developer">
+<meta property="og:description" content="Building scalable backend systems with Java, Spring Boot, and clean architecture.">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Yogesh Bhatt","jobTitle":"Backend Developer","email":"mailto:yogeshbhatt1239@gmail.com","telephone":"+91-9548733532","address":{"@type":"PostalAddress","addressLocality":"Dehradun","addressCountry":"IN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Graphic Era Hill University"},"knowsAbout":["Java","Spring Boot","Spring Security","REST APIs","MySQL","MongoDB","Redis","JWT","System Design"],"sameAs":["https://www.linkedin.com/in/yogesh-bhatt-swd","https://github.com/Yogesh-Bhatt-SWD","https://leetcode.com/u/Y_ogesh_SwD/"]}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0c0b'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%233ddc84' text-anchor='middle'%3EYB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+/* set theme before first paint — no flash */
+try{var _t=localStorage.getItem('yb-theme');if(_t==='light'||_t==='dark'){document.documentElement.setAttribute('data-theme',_t)}else if(window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light')}}catch(e){}
+</script>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- BOOT LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-lines" id="loaderLines"></div>
+    <div class="loader-bar"><span id="loaderBarFill"></span></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="Yogesh Bhatt — home">YB<span class="cursor">_</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about" data-nav>about</a>
+      <a href="#experience" data-nav>experience</a>
+      <a href="#projects" data-nav>projects</a>
+      <a href="#systems" data-nav>systems</a>
+      <a href="#journey" data-nav>journey</a>
+      <a href="#contact" data-nav>contact</a>
+    </nav>
+    <div class="nav-right">
+      <span class="status"><i></i>open to roles</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to light theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5 5l1.7 1.7M17.3 17.3L19 19M19 5l-1.7 1.7M6.7 17.3L5 19"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13.2A8 8 0 0 1 10.8 4 8 8 0 1 0 20 13.2z"/></svg>
+      </button>
+      <a class="btn btn-small" href="assets/Yogesh_Bhatt_Resume.pdf" target="_blank" rel="noopener" data-open-resume>Resume</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav aria-label="Mobile">
+    <a href="#about">about</a>
+    <a href="#experience">experience</a>
+    <a href="#projects">projects</a>
+    <a href="#systems">systems</a>
+    <a href="#journey">journey</a>
+    <a href="#contact">contact</a>
+  </nav>
+  <div class="mobile-actions">
+    <button class="theme-toggle" id="themeToggleMobile" aria-label="Switch to light theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5 5l1.7 1.7M17.3 17.3L19 19M19 5l-1.7 1.7M6.7 17.3L5 19"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13.2A8 8 0 0 1 10.8 4 8 8 0 1 0 20 13.2z"/></svg>
+      <span>theme</span>
+    </button>
+    <a class="btn" href="assets/Yogesh_Bhatt_Resume.pdf" target="_blank" rel="noopener" data-open-resume>Resume</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="assets/hero.jpg" alt="">
+      <div class="hero-shade"></div>
+    </div>
+    <div class="hero-inner container">
+      <div class="hero-copy">
+        <p class="kicker reveal">// backend developer · java</p>
+        <h1 class="reveal">Building scalable<br><span class="accent">backend</span> systems.</h1>
+        <p class="lede reveal">I'm Yogesh Bhatt — a Computer Science engineer who designs reliable REST APIs, data services and distributed backends with Java&nbsp;&amp;&nbsp;Spring&nbsp;Boot. Clean code, real scale, no shortcuts.</p>
+        <div class="hero-cta reveal">
+          <a class="btn magnetic" href="#projects">View projects</a>
+          <a class="btn btn-ghost magnetic" href="#contact">Get in touch</a>
+        </div>
+        <dl class="hero-stats reveal">
+          <div><dt><span class="count" data-count="400">0</span>+</dt><dd>DSA problems solved</dd></div>
+          <div><dt><span class="count" data-count="3">0</span>rd<span class="dim">/140+</span></dt><dd>hackathon finish</dd></div>
+          <div><dt><span class="count" data-count="10">0</span>k+</dt><dd>images in YOLO pipeline</dd></div>
+        </dl>
+      </div>
+      <div class="hero-term reveal" id="heroTerm">
+        <div class="term-bar"><i></i><i></i><i></i><span>yb — zsh</span></div>
+        <div class="term-body" id="termBody" role="region" aria-label="Interactive terminal. Type help and press enter for a list of commands." tabindex="0">
+          <div class="term-history" id="termHistory"></div>
+          <div class="term-input-row" id="termInputRow" hidden>
+            <span class="prompt">$</span>
+            <input id="termInput" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Terminal command input">
+          </div>
+        </div>
+        <p class="term-hint" id="termHint" hidden>interactive — type <span>help</span> ↵</p>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#about" aria-label="Scroll to about"><span></span>scroll</a>
+  </section>
+
+  <!-- STACK TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack">
+      <span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>REST APIs</span><span>JWT</span><span>MySQL</span><span>MongoDB</span><span>Redis</span><span>Hibernate</span><span>React 19</span><span>Maven</span><span>Flyway</span><span>Postman</span><span>Git</span><span>Swagger</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="kicker reveal">// 01 · about</p>
+      <h2 class="reveal">Engineer first,<br>everything else follows.</h2>
+      <div class="about-grid">
+        <figure class="portrait reveal">
+          <img src="assets/portrait.jpg" alt="Portrait of Yogesh Bhatt" loading="lazy">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <figcaption>yogesh bhatt · dehradun, in</figcaption>
+        </figure>
+        <div class="about-copy">
+          <p class="reveal">Final-year B.Tech CSE (AI &amp; ML) student at Graphic Era Hill University. I build backend systems the production way — versioned migrations, centralized exception handling, tested endpoints, cached hot paths. My idea of a good weekend is a clean architecture diagram and a green test suite.</p>
+          <p class="reveal">Recently: backend intern at Prodigy InfoTech, shipping a hotel-management platform with JWT auth, role-based access and Redis caching. Before that: 3rd place out of 140+ teams at the GEU hackathon with CIVICA, an AI-powered civic platform.</p>
+          <div class="edu reveal">
+            <div class="edu-row"><span class="edu-when">2023 — 2027</span><div><strong>B.Tech, Computer Science (AI &amp; ML)</strong><span>Graphic Era Hill University</span></div></div>
+            <div class="edu-row"><span class="edu-when">2022</span><div><strong>Senior Secondary, CBSE</strong><span>Mnemonic Convent Sr. Sec. School</span></div></div>
+          </div>
+          <ul class="now-list reveal">
+            <li><span>now</span> grinding system design + DSA daily</li>
+            <li><span>next</span> backend / full-stack roles for 2027</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <p class="kicker reveal">// 02 · experience</p>
+      <h2 class="reveal">Shipped, not just studied.</h2>
+      <article class="xp-card reveal">
+        <div class="xp-head">
+          <div>
+            <h3>Backend Web Development Intern</h3>
+            <p class="xp-org">Prodigy InfoTech · Remote</p>
+          </div>
+          <span class="xp-when">Aug 2026</span>
+        </div>
+        <p class="xp-desc">Built REST APIs for a hotel-management platform — the full backend lifecycle from schema migrations to cached, authorized endpoints.</p>
+        <ul class="xp-list">
+          <li>Designed a hotel-room booking API with <strong>date-range conflict detection</strong> to prevent double-booking, with per-role authorization (ADMIN / OWNER / GUEST) enforced across room and booking endpoints.</li>
+          <li>Added <strong>Redis-backed caching</strong> via Spring Cache with differentiated TTLs (5–30 min) for room and user lookups, plus automatic cache eviction on writes.</li>
+          <li>Applied <strong>centralized exception handling</strong>, Bean Validation and versioned Flyway migrations for a consistent, production-style codebase.</li>
+          <li>Implemented <strong>JWT authentication</strong> with role-based access control across the entire API surface.</li>
+        </ul>
+        <div class="tags"><span>Java</span><span>Spring Boot</span><span>MySQL</span><span>Redis</span><span>JWT</span><span>Flyway</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="kicker reveal">// 03 · projects</p>
+      <h2 class="reveal">Things I've built<br>to survive production.</h2>
+      <div class="projects">
+
+        <article class="project reveal">
+          <a class="project-media tilt" href="https://github.com/Yogesh-Bhatt-SWD/civica" target="_blank" rel="noopener" aria-label="CIVICA on GitHub">
+            <img src="assets/project-civica.webp" alt="CIVICA — city street at night (photograph)" loading="lazy">
+            <span class="project-num">01</span>
+          </a>
+          <div class="project-body">
+            <div class="project-top"><h3>CIVICA</h3><span class="badge">3rd / 140+ · GEU Hackathon</span></div>
+            <p class="project-sub">AI-powered civic infrastructure platform</p>
+            <p>Full-stack issue-reporting platform with role-based workflows (OPEN → IN PROGRESS → RESOLVED) for citizens and authorities. Trained a YOLOv8 detection pipeline on 10,000+ images across 5 categories for automated issue classification at ~85% accuracy. Redis caching with duplicate-issue detection cut redundant submissions by ~35%; MySQL spatial queries power location-aware prioritization.</p>
+            <div class="metrics">
+              <div><strong>~85%</strong><span>detection accuracy</span></div>
+              <div><strong>−35%</strong><span>duplicate submissions</span></div>
+              <div><strong>10k+</strong><span>training images</span></div>
+            </div>
+            <div class="tags"><span>Spring Boot</span><span>Spring Security</span><span>JWT</span><span>MySQL</span><span>Redis</span><span>YOLOv8</span></div>
+            <a class="link-arrow" href="https://github.com/Yogesh-Bhatt-SWD/civica" target="_blank" rel="noopener">View on GitHub <i>→</i></a>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <a class="project-media tilt" href="https://github.com/Yogesh-Bhatt-SWD/NotesSphere" target="_blank" rel="noopener" aria-label="NoteSphere on GitHub">
+            <img src="assets/project-notesphere.webp" alt="NoteSphere — handwritten journal with pen (photograph)" loading="lazy">
+            <span class="project-num">02</span>
+          </a>
+          <div class="project-body">
+            <div class="project-top"><h3>NoteSphere</h3><span class="badge">full-stack</span></div>
+            <p class="project-sub">Intelligent journal management platform</p>
+            <p>Secure journaling platform with JWT + OAuth2 authentication, user-specific data isolation and role-based access across every endpoint. VADER-based sentiment analysis and rule-based NLP auto-tagging surface emotional patterns and make entries discoverable. APIs designed and documented end-to-end with Swagger/OpenAPI; Redis caching cut average MongoDB read latency by ~40%.</p>
+            <div class="metrics">
+              <div><strong>−40%</strong><span>MongoDB read latency</span></div>
+              <div><strong>2×</strong><span>auth: JWT + OAuth2</span></div>
+              <div><strong>NLP</strong><span>sentiment + auto-tagging</span></div>
+            </div>
+            <div class="tags"><span>Spring Boot</span><span>MongoDB</span><span>Redis</span><span>OAuth2</span><span>Swagger</span></div>
+            <a class="link-arrow" href="https://github.com/Yogesh-Bhatt-SWD/NotesSphere" target="_blank" rel="noopener">View on GitHub <i>→</i></a>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-media tilt">
+            <img src="assets/project-hotel.webp" alt="Hotel management platform — grand hotel at dusk (photograph)" loading="lazy">
+            <span class="project-num">03</span>
+          </div>
+          <div class="project-body">
+            <div class="project-top"><h3>Hotel Management API</h3><span class="badge">internship build</span></div>
+            <p class="project-sub">Booking &amp; property backend · Prodigy InfoTech</p>
+            <p>Production-style REST backend for hotel operations: room inventory, reservations with conflict-safe date ranges, and three-tier role authorization. Hot paths cached in Redis with write-through eviction; every schema change shipped as a versioned Flyway migration.</p>
+            <div class="metrics">
+              <div><strong>3</strong><span>RBAC roles enforced</span></div>
+              <div><strong>0</strong><span>double-bookings possible</span></div>
+              <div><strong>5–30m</strong><span>cache TTL tiers</span></div>
+            </div>
+            <div class="tags"><span>Spring Boot</span><span>MySQL</span><span>Flyway</span><span>Redis</span><span>JWT</span></div>
+            <a class="link-arrow" href="https://github.com/Yogesh-Bhatt-SWD" target="_blank" rel="noopener">More on GitHub <i>→</i></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEMS -->
+  <section class="section section-alt" id="systems">
+    <div class="container">
+      <p class="kicker reveal">// 04 · how i think</p>
+      <h2 class="reveal">I think in systems,<br>not just endpoints.</h2>
+      <p class="section-lede reveal">Every project starts on a whiteboard: where does the request go, what can fail, what's cached, what the database actually has to do. This is the shape most of my backends take.</p>
+      <div class="diagram reveal" role="img" aria-label="Architecture diagram: client to API gateway to auth, civic and booking services, backed by MySQL, MongoDB and Redis">
+        <svg viewBox="0 0 900 420" class="arch" aria-hidden="true">
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#3ddc84"/>
+            </marker>
+          </defs>
+          <g class="node" transform="translate(30,175)">
+            <rect width="130" height="70" rx="3"/><text x="65" y="30" text-anchor="middle">CLIENT</text><text x="65" y="50" text-anchor="middle" class="dim">web / mobile</text>
+          </g>
+          <g class="node node-core" transform="translate(240,175)">
+            <rect width="150" height="70" rx="3"/><text x="75" y="30" text-anchor="middle">API GATEWAY</text><text x="75" y="50" text-anchor="middle" class="dim">auth · routing</text>
+          </g>
+          <g class="node" transform="translate(470,60)">
+            <rect width="150" height="64" rx="3"/><text x="75" y="28" text-anchor="middle">AUTH SVC</text><text x="75" y="47" text-anchor="middle" class="dim">jwt · rbac</text>
+          </g>
+          <g class="node" transform="translate(470,178)">
+            <rect width="150" height="64" rx="3"/><text x="75" y="28" text-anchor="middle">CIVICA SVC</text><text x="75" y="47" text-anchor="middle" class="dim">yolo · geo</text>
+          </g>
+          <g class="node" transform="translate(470,296)">
+            <rect width="150" height="64" rx="3"/><text x="75" y="28" text-anchor="middle">BOOKING SVC</text><text x="75" y="47" text-anchor="middle" class="dim">conflict-safe</text>
+          </g>
+          <g class="node node-db" transform="translate(700,60)">
+            <rect width="150" height="64" rx="3"/><text x="75" y="28" text-anchor="middle">MySQL</text><text x="75" y="47" text-anchor="middle" class="dim">relational</text>
+          </g>
+          <g class="node node-db" transform="translate(700,178)">
+            <rect width="150" height="64" rx="3"/><text x="75" y="28" text-anchor="middle">MongoDB</text><text x="75" y="47" text-anchor="middle" class="dim">documents · geo</text>
+          </g>
+          <g class="node node-db" transform="translate(700,296)">
+            <rect width="150" height="64" rx="3"/><text x="75" y="28" text-anchor="middle">REDIS</text><text x="75" y="47" text-anchor="middle" class="dim">cache · ttl</text>
+          </g>
+          <g class="flow">
+            <path d="M160,210 H236" marker-end="url(#arr)"/>
+            <path d="M390,195 C430,195 430,92 466,92" marker-end="url(#arr)"/>
+            <path d="M390,210 H466" marker-end="url(#arr)"/>
+            <path d="M390,225 C430,225 430,328 466,328" marker-end="url(#arr)"/>
+            <path d="M620,92 H696" marker-end="url(#arr)"/>
+            <path d="M620,210 H696" marker-end="url(#arr)"/>
+            <path d="M620,328 H696" marker-end="url(#arr)"/>
+            <path d="M620,124 C660,124 660,300 696,312" class="back" marker-end="url(#arr)"/>
+          </g>
+        </svg>
+      </div>
+      <div class="principles">
+        <div class="principle reveal"><span>01</span><h4>Cache the hot path</h4><p>Redis in front of repeated reads, TTLs tuned per entity, eviction on write — never stale, never slow.</p></div>
+        <div class="principle reveal"><span>02</span><h4>Authorize everything</h4><p>JWT at the gateway, role checks at the endpoint. No trust-me routes.</p></div>
+        <div class="principle reveal"><span>03</span><h4>Migrate, don't mutate</h4><p>Versioned Flyway migrations. The schema's history is as important as the schema.</p></div>
+        <div class="principle reveal"><span>04</span><h4>Fail loudly, recover cleanly</h4><p>Centralized exception handling, validated inputs, meaningful status codes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section class="section" id="journey">
+    <div class="container">
+      <p class="kicker reveal">// 05 · journey</p>
+      <h2 class="reveal">The road so far.</h2>
+      <ol class="timeline">
+        <li class="reveal"><span class="t-when">2022</span><div><h4>Class XII — CBSE</h4><p>Mnemonic Convent Sr. Sec. School. The starting line.</p></div></li>
+        <li class="reveal"><span class="t-when">2023</span><div><h4>B.Tech CSE begins</h4><p>Graphic Era Hill University — AI &amp; ML track. Java becomes the mother tongue.</p></div></li>
+        <li class="reveal"><span class="t-when">2024</span><div><h4>Core Java &amp; DSA grind</h4><p>400+ problems deep. Data structures stop being theory.</p></div></li>
+        <li class="reveal"><span class="t-when">2025</span><div><h4>Spring Boot era + hackathon podium</h4><p>CIVICA ships; 3rd of 140+ teams at the GEU hackathon. YOLOv8, Redis, geospatial — the stack gets real.</p></div></li>
+        <li class="reveal"><span class="t-when">2026</span><div><h4>Production internship</h4><p>Backend intern at Prodigy InfoTech — hotel platform APIs with JWT, RBAC and Redis caching. Bharat Builds Tour hackathon (WeMakeDevs × AWS). JPMorgan Chase software engineering simulation.</p></div></li>
+        <li class="reveal current"><span class="t-when">2027 →</span><div><h4>Open to what's next</h4><p>Backend and full-stack roles. Systems worth scaling, teams worth joining.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="section section-alt" id="credentials">
+    <div class="container">
+      <p class="kicker reveal">// 06 · credentials</p>
+      <h2 class="reveal">Paper trail.</h2>
+      <div class="creds">
+        <a class="cred reveal" href="https://drive.google.com/file/d/1CsSH-9Kd5nsfxbVYL6fdnv3r0HYGqtWA/view?usp=sharing" target="_blank" rel="noopener">
+          <div><h4>Bharat Builds Tour — First Commit Hackathon</h4><p>Participant · WeMakeDevs × AWS · Sep 2026</p></div><span class="verify">verify ↗</span>
+        </a>
+        <a class="cred reveal" href="https://drive.google.com/file/d/1MRmvXVbzZpqaNaOcisgzIhcNNUwuTeiC/view?usp=sharing" target="_blank" rel="noopener">
+          <div><h4>Prodigy InfoTech — Backend Internship</h4><p>Completed 1-month backend development internship · Aug 2026</p></div><span class="verify">verify ↗</span>
+        </a>
+        <a class="cred reveal" href="https://drive.google.com/file/d/1EqkVhaPePOEZaedVqTE4IMVERkoO6YaF/view?usp=sharing" target="_blank" rel="noopener">
+          <div><h4>JPMorgan Chase — Software Engineering Simulation</h4><p>Completed via Forage</p></div><span class="verify">verify ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <p class="kicker reveal">// 07 · contact</p>
+      <h2 class="reveal">Let's build something<br>that <span class="accent">scales</span>.</h2>
+      <p class="section-lede reveal">Internships, full-time backend roles, or just a good conversation about system design — my inbox is open.</p>
+      <div class="contact-actions reveal">
+        <a class="btn magnetic" href="mailto:yogeshbhatt1239@gmail.com">yogeshbhatt1239@gmail.com</a>
+        <a class="btn btn-ghost magnetic" href="tel:+919548733532">+91 95487 33532</a>
+      </div>
+      <div class="socials reveal">
+        <a href="https://www.linkedin.com/in/yogesh-bhatt-swd" target="_blank" rel="noopener"><span>LinkedIn</span><i>↗</i></a>
+        <a href="https://github.com/Yogesh-Bhatt-SWD" target="_blank" rel="noopener"><span>GitHub</span><i>↗</i></a>
+        <a href="https://leetcode.com/u/Y_ogesh_SwD/" target="_blank" rel="noopener"><span>LeetCode</span><i>↗</i></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© <span id="year">2026</span> Yogesh Bhatt</span>
+    <span class="foot-mid">designed &amp; built with intent</span>
+    <span class="foot-note">project photography: flickr contributors (cc)</span>
+    <a href="#top" class="to-top" aria-label="Back to top">top ↑</a>
+  </div>
+</footer>
+
+<!-- RESUME PREVIEW MODAL -->
+<div class="resume-modal" id="resumeModal" role="dialog" aria-modal="true" aria-label="Resume preview" hidden>
+  <div class="resume-modal-backdrop" data-close-resume></div>
+  <div class="resume-modal-panel">
+    <div class="resume-modal-bar">
+      <span class="resume-modal-title">Yogesh_Bhatt_Resume.pdf</span>
+      <div class="resume-modal-actions">
+        <a class="btn btn-small" href="assets/Yogesh_Bhatt_Resume.pdf" download="Yogesh_Bhatt_Resume.pdf">Download</a>
+        <button class="modal-close" data-close-resume aria-label="Close resume preview">✕</button>
+      </div>
+    </div>
+    <div class="resume-modal-pages">
+      <img src="assets/resume-p1.png" alt="Yogesh Bhatt resume, page 1">
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
 </html>
